@@ -15,7 +15,7 @@ const PROJECTAPP_SCRAPER_WONTFIX = 5;
 
 
 // Get all "needs review" issues.
-$crawler = get_request('https://drupal.org/project/issues/search/projectapplications?status[0]=1&status[1]=8');
+$crawler = get_request('https://drupal.org/project/issues/search/drupal?status[0]=8&version[0]=8.x&order=last_comment_timestamp&sort=asc');
 $issues = $crawler->filterXPath('//tbody/tr/td[1]/a');
 
 if ($issues->count() == 0) {
